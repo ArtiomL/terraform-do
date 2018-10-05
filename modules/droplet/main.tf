@@ -15,6 +15,6 @@ resource "digitalocean_droplet" "main" {
 }
 
 resource "digitalocean_floating_ip" "main" {
-  droplet_id = "${digitalocean_droplet.main.id}"
-  region     = "${digitalocean_droplet.main.region}"
+  droplet_id = "${element(digitalocean_droplet.main.*.id, count.index)}"
+  region     = "${var.do_region}"
 }
