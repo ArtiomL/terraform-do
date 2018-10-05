@@ -5,28 +5,17 @@ variable "do_region" {
   default     = "fra1"
 }
 
-# --- Tags --- #
-
-variable "tag_name" {
-  description = "Name tag"
-  default     = "F5Labs"
-}
-
-variable "tag_environment" {
-  description = "Environment tag"
-  default     = "DEV"
-}
-
-variable "tags_shared" {
-  description = "Other tags assigned to all resources"
-  default     = ["T.Durden", "R&D", "7741", "Mayhem"]
-}
-
 # --- Droplet --- #
 
 variable "ssh_keys" {
   description = "SSH key IDs or fingerprints"
   type        = "list"
+}
+
+variable "droplet_names" {
+  description = "Droplet names"
+  type        = "list"
+  default     = ["Droplet"]
 }
 
 variable "droplet_image" {
@@ -39,6 +28,31 @@ variable "droplet_size" {
   default     = "s-1vcpu-1gb"
 }
 
+variable "droplet_backups" {
+  description = "Enable Droplet backups"
+  default     = true
+}
+
+variable "floating_ip" {
+  description = "Assign Floating IP"
+  default     = true
+}
+
 variable "user_data" {
   description = "Cloud-config user data acted upon by cloud-init"
+  default     = "#cloud-config"
+}
+
+# --- Firewall --- #
+
+variable "mgmt_asrc" {
+  description = "Source IPv4 CIDR block(s) allowed to access management"
+  default     = [""]
+}
+
+# --- Tags --- #
+
+variable "tags_shared" {
+  description = "Tags assigned to all resources"
+  default     = ["env:prod", "owner:artioml", "project:nautilus"]
 }
