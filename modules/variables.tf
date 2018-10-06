@@ -57,7 +57,7 @@ variable "firewall_name" {
 
 variable "mgmt_asrc" {
   description = "Source IPv4 CIDR block(s) allowed to access management"
-  default     = [""]
+  default     = []
 }
 
 # --- Tags --- #
