@@ -50,6 +50,11 @@ variable "user_data" {
 
 # --- Firewall --- #
 
+variable "firewall_name" {
+  description = "Firewall name"
+  default     = "Dam"
+}
+
 variable "mgmt_asrc" {
   description = "Source IPv4 CIDR block(s) allowed to access management"
   default     = [""]
