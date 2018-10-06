@@ -21,3 +21,12 @@ module "droplet" {
 module "ifconfig" {
   source = "github.com/ArtiomL/f5-terraform/modules/common/ifconfig"
 }
+
+# Firewall
+module "firewall" {
+  source        = "./firewall"
+  firewall_name = "${var.firewall_name}"
+  droplet_ids   = "${module.droplet.ids}"
+  mgmt_asrc     = "${length(var.mgmt_asrc) == 0 ? module.ifconfig.ip_cidr : var.mgmt_asrc}"
+  tags_shared   = "${var.tags_shared}"
+}
