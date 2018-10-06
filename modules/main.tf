@@ -11,6 +11,7 @@ module "droplet" {
   droplet_names = "${var.droplet_names}"
   droplet_image = "${var.droplet_image}"
   droplet_size  = "${var.droplet_size}"
+  floating_ip   = "${var.floating_ip}"
   user_data     = "${var.user_data}"
   tags_shared   = "${var.tags_shared}"
 }
