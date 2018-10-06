@@ -7,9 +7,9 @@ variable "do_region" {
 
 # --- Droplet --- #
 
-variable "ssh_keys" {
-  description = "SSH key IDs or fingerprints"
-  type        = "list"
+variable "key_path" {
+  description = "SSH public key path"
+  default     = "/home/user/.ssh/id_rsa.pub"
 }
 
 variable "droplet_names" {
