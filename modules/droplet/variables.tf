@@ -5,9 +5,14 @@ variable "do_region" {
   default     = "fra1"
 }
 
-variable "ssh_keys" {
-  description = "SSH key IDs or fingerprints"
-  type        = "list"
+variable "key_path" {
+  description = "SSH public key path"
+  default     = "/home/user/.ssh/id_rsa.pub"
+}
+
+variable "key_name" {
+  description = "SSH key pair name"
+  default     = "Seashell"
 }
 
 variable "droplet_names" {
