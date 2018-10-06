@@ -12,6 +12,11 @@ variable "key_path" {
   default     = "/home/user/.ssh/id_rsa.pub"
 }
 
+variable "key_name" {
+  description = "SSH key pair name"
+  default     = "Seashell"
+}
+
 variable "droplet_names" {
   description = "Droplet names"
   type        = "list"
