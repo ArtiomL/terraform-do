@@ -27,6 +27,5 @@ module "firewall" {
   source        = "./firewall"
   firewall_name = "${var.firewall_name}"
   droplet_ids   = "${module.droplet.ids}"
-  mgmt_asrc     = "${module.ifconfig.ip_cidr}"
   tags_shared   = "${var.tags_shared}"
 }
