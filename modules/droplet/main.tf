@@ -8,7 +8,7 @@ resource "digitalocean_droplet" "main" {
   count     = "${length(var.droplet_names)}"
   ssh_keys  = ["${digitalocean_ssh_key.main.fingerprint}"]
   image     = "${var.droplet_image}"
-  region    = "${element(var.do_region, count.index)}"
+  region    = "${element(var.do_regions, count.index)}"
   size      = "${var.droplet_size}"
   name      = "${element(var.droplet_names, count.index)}"
   backups   = "${var.droplet_backups}"
