@@ -5,7 +5,7 @@ provider "digitalocean" {}
 # Droplet
 module "droplet" {
   source          = "./droplet"
-  do_region       = "${var.do_region}"
+  do_regions      = "${var.do_regions}"
   key_path        = "${var.key_path}"
   key_name        = "${var.key_name}"
   droplet_names   = "${var.droplet_names}"
@@ -27,5 +27,13 @@ module "firewall" {
   source        = "./firewall"
   firewall_name = "${var.firewall_name}"
   droplet_ids   = "${module.droplet.ids}"
+  mgmt_asrc     = "${local.masc["${length(var.mgmt_asrc) == 0 ? "ifconfig" : "input"}"]}"
   tags_shared   = "${var.tags_shared}"
+}
+
+locals {
+  masc = {
+    ifconfig = "${module.ifconfig.list}"
+    input    = "${var.mgmt_asrc}"
+  }
 }
