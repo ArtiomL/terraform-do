@@ -6,22 +6,22 @@ locals {
 
 resource "digitalocean_firewall" "main" {
   name        = "${var.firewall_name}"
-  droplet_ids = "${var.droplet_ids}"
+  droplet_ids = ["${var.droplet_ids}"]
 
   inbound_rule = [
     {
       protocol         = "tcp"
       port_range       = "1-65535"
-      source_addresses = "${var.mgmt_asrc}"
+      source_addresses = ["${var.mgmt_asrc}"]
     },
     {
       protocol         = "udp"
       port_range       = "1-65535"
-      source_addresses = "${var.mgmt_asrc}"
+      source_addresses = ["${var.mgmt_asrc}"]
     },
     {
       protocol         = "icmp"
-      source_addresses = "${var.mgmt_asrc}"
+      source_addresses = ["${var.mgmt_asrc}"]
     },
     {
       protocol         = "tcp"
