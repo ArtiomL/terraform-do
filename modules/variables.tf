@@ -1,8 +1,9 @@
 # DigitalOcean Input Variables
 
-variable "do_region" {
-  description = "DigitalOcean region"
-  default     = "fra1"
+variable "do_regions" {
+  description = "DigitalOcean regions"
+  type        = "list"
+  default     = ["fra1", "nyc1"]
 }
 
 # --- Droplet --- #
@@ -20,7 +21,7 @@ variable "key_name" {
 variable "droplet_names" {
   description = "Droplet names"
   type        = "list"
-  default     = ["Droplet"]
+  default     = ["Droplet", "Sandbox"]
 }
 
 variable "droplet_image" {
