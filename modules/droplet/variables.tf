@@ -1,6 +1,6 @@
 # Droplet Input Variables
 
-variable "do_region" {
+variable "do_regions" {
   description = "DigitalOcean regions"
   type        = "list"
   default     = ["fra1", "nyc1"]
