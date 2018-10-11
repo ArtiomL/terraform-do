@@ -1,7 +1,5 @@
 # Infrastructure
 
-provider "digitalocean" {}
-
 # DigitalOcean
 module "do" {
   source          = "github.com/ArtiomL/terraform-do/modules"
@@ -19,6 +17,7 @@ module "do" {
   tags_shared     = "${var.tags_shared}"
 }
 
+# Template: cloud-config
 data "template_file" "main" {
   template = "${file(var.user_data_path)}"
 
