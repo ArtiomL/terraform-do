@@ -45,12 +45,12 @@ variable "floating_ip" {
 }
 
 variable "droplet_user" {
-  description = "Enable Droplet backups"
+  description = "Droplet user"
   default     = "nemo"
 }
 
 variable "ssh_port" {
-  description = "Enable Droplet backups"
+  description = "Droplet SSH port"
   default     = 22
 }
 
