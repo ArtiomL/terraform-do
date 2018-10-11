@@ -39,7 +39,7 @@ variable "droplet_backups" {
 
 variable "floating_ip" {
   description = "Assign Floating IP"
-  default     = true
+  default     = false
 }
 
 variable "user_data" {
