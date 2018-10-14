@@ -71,6 +71,13 @@ variable "mgmt_asrc" {
   default     = []
 }
 
+# --- Slack --- #
+
+variable "webhook_url" {
+  description = "Incoming Webhook URL"
+  default     = "T00000000/B00000000/XXXXXXXXXXXXXXXXXXXXXXXX"
+}
+
 # --- Tags --- #
 
 variable "tags_shared" {
