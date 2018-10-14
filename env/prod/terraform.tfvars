@@ -13,4 +13,5 @@ ssh_port        = 22
 user_data_path  = "init.tpl"
 firewall_name   = "Dam"
 mgmt_asrc       = []
+webhook_url     = "T00000000/B00000000/XXXXXXXXXXXXXXXXXXXXXXXX"
 tags_shared     = ["env:prod", "owner:artioml", "project:nautilus"]
