@@ -27,3 +27,10 @@ data "template_file" "main" {
     ssh_port     = "${var.ssh_port}"
   }
 }
+
+# Slack
+module "slack" {
+  source       = "github.com/ArtiomL/f5-terraform/modules/common/slack"
+  message_text = "Droplets deployed: `${join(", ", module.do.droplet_ips)}`"
+  webhook_url  = "${var.webhook_url}"
+}
