@@ -8,6 +8,12 @@
 
 &nbsp;&nbsp;
 
+## Table of Contents
+- [Description](#description)
+- [License](LICENSE)
+
+&nbsp;&nbsp;
+
 ## Description
 
 Terraform DigitalOcean modules and IaC configuration files.
