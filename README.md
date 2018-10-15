@@ -8,5 +8,4 @@
 
 &nbsp;&nbsp;
 
-## Table of Contents
-- [Description](#description)
+Terraform DigitalOcean modules and IaC configuration files.
