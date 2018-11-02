@@ -27,13 +27,6 @@ module "firewall" {
   source        = "./firewall"
   firewall_name = "${var.firewall_name}"
   droplet_ids   = "${module.droplet.ids}"
-  mgmt_asrc     = "${local.masc["${length(var.mgmt_asrc) == 0 ? "ifconfig" : "input"}"]}"
+  mgmt_asrc     = "${coalescelist(var.mgmt_asrc, module.ifconfig.list)}"
   tags_shared   = "${var.tags_shared}"
-}
-
-locals {
-  masc = {
-    ifconfig = "${module.ifconfig.list}"
-    input    = "${var.mgmt_asrc}"
-  }
 }
